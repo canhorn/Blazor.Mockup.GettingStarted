@@ -1,0 +1,40 @@
+@page "/"
+@using EventHorizon.Blazor.Mockup
+
+<ComponentMockup ComponentType="@(typeof(AwesomeUI))" 
+                 Arguments="@(
+            new ComponentArgumentDetailsMap {
+                ["Title"] = new()
+                {
+                    Description = "The strong Title of the Component.",
+                    DefaultValue = null,
+                    PropertyValue = "Hello I am a Title",
+                },
+                ["BackgroundColor"] = new ()
+                {
+                    Description = "The Background Color, supports CSS color values.",
+                    DefaultValue = "gray",
+                },
+                ["HandleAwesomeClicked"] = new()
+                {
+                    Description = "Click here to do something Awesome. (Check the Events Tab.)",
+                    DefaultValue = null,
+                },
+                ["AwesomeLinkHref"] = new()
+                {
+                    Description = "Checkout this Awesome Link!",
+                    DefaultValue = "",
+                    PropertyValue = "https://codyanhorn.tech",
+                },
+                ["ANumber"] = new ()
+                {
+                    Description = "A Number!",
+                    DefaultValue = 13,
+                    PropertyValue = 83,
+                },
+                ["Icon"] = new()
+                {
+                    Description = "Here we see pencil is the default value, and we dont pass anything in.",
+                    DefaultValue = "pencil",
+                },
+            })" />

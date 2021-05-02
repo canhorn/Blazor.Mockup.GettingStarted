@@ -1,0 +1,28 @@
+<div style="background: @BackgroundColor; padding: 1rem" class="mt-4" role="alert">
+    <span class="oi oi-@Icon mr-2" aria-hidden="true"></span>
+    <strong>@Title</strong>
+
+    <div>@ANumber</div>
+
+    <span class="text-nowrap">
+        Checkout this <a target="_blank" class="font-weight-bold" href="@AwesomeLinkHref">Awesome Link</a>
+    </span>
+    <div>
+        <button class="btn btn-primary" @onclick="HandleAwesomeClicked">Be Awesome!</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public string BackgroundColor { get; set; } = "gray";
+    [Parameter]
+    public string Icon { get; set; } = "pencil";
+    [Parameter]
+    public string AwesomeLinkHref { get; set; } = string.Empty;
+    [Parameter]
+    public int ANumber { get; set; } = 13;
+    [Parameter]
+    public EventCallback<MouseEventArgs> HandleAwesomeClicked { get; set; }
+}
